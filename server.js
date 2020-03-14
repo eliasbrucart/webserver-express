@@ -1,7 +1,9 @@
 const express = require('express');
+
 const app = express();
 
 const hbs = require('hbs');
+
 require('./hbs/helpers.js');
 
 const port = process.env.PORT || 3000;
@@ -21,9 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    res.render('about', {
-        anio: new Date().getFullYear()
-    });
+    res.render('about');
 });
 
 app.listen(port, () => {
